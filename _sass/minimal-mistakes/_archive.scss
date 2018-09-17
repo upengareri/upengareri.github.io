@@ -22,7 +22,7 @@
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
   font-size: $type-size-5;
-  color: $muted-text-color;
+  color: $gray;
   border-bottom: 1px solid $border-color;
 
   + .list__item .archive__item-title {
@@ -343,12 +343,17 @@
     }
   }
 
+
   .feature__item,
   .feature__item--left,
   .feature__item--center,
   .feature__item--right {
     font-size: 1em;
   }
+}
+.archive a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /*
