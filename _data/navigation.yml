@@ -5,7 +5,7 @@ main:
   - title: "About"
     url: /about/
   - title: "Resources"
-    url: /resource/
+    url: /resources/
   - title: "CV"
     url: /cv/
   - title: "Miscellaneous"
