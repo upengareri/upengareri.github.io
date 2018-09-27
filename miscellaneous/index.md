@@ -2,7 +2,7 @@
 layout: single
 ---
 
-This page is about reading interesting posts and articles (non-technical).
+This page is about sharing interesting posts and articles on anything that interests me.
 
 
 
