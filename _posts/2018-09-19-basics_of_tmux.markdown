@@ -97,6 +97,9 @@ Assuming we are in a session (attached) -
 
 ***Note***: Here D means down and 2 means number of lines. Similarly **U: UP, L: LEFT, R: RIGHT**. 
 
+#### To zoom in and out one of the window panes:
+	Ctrl+b z
+
 ---
 
 ### Summary of most basic commands:
@@ -108,6 +111,8 @@ Ctrl+b "			-> Creates horizontal pane
 Ctrl+b %			-> Creates vertical pane
 
 Ctrl+b arrow_keys		-> Move to a pane
+
+Ctrl+b z 			-> Zoom in and out a window pane
 
 tmux kill-server		-> Kill server and all panes
 ```

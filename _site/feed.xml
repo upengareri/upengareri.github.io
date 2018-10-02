@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-09-30T10:34:28+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Basics of tmux</title><link href="http://localhost:4000/basics_of_tmux/" rel="alternate" type="text/html" title="Basics of tmux" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-19T00:00:00+02:00</updated><id>http://localhost:4000/basics_of_tmux</id><content type="html" xml:base="http://localhost:4000/basics_of_tmux/">&lt;h2 id=&quot;what-is-tmux&quot;&gt;What is tmux?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-02T10:21:59+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Basics of tmux</title><link href="http://localhost:4000/basics_of_tmux/" rel="alternate" type="text/html" title="Basics of tmux" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-19T00:00:00+02:00</updated><id>http://localhost:4000/basics_of_tmux</id><content type="html" xml:base="http://localhost:4000/basics_of_tmux/">&lt;h2 id=&quot;what-is-tmux&quot;&gt;What is tmux?&lt;/h2&gt;
 &lt;p&gt;It stands for &lt;strong&gt;&lt;em&gt;terminal multiplexer&lt;/em&gt;&lt;/strong&gt;. In simple terms, it can multiply a single terminal window into multiple windows.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/images/tmux_start.png&quot; alt=&quot;tmux start&quot; /&gt;&lt;/p&gt;
@@ -111,6 +111,10 @@ Assuming we are in a session (attached) -&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note&lt;/em&gt;&lt;/strong&gt;: Here D means down and 2 means number of lines. Similarly &lt;strong&gt;U: UP, L: LEFT, R: RIGHT&lt;/strong&gt;.&lt;/p&gt;
 
+&lt;h4 id=&quot;to-zoom-in-and-out-one-of-the-window-panes&quot;&gt;To zoom in and out one of the window panes:&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Ctrl+b z
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;hr /&gt;
 
 &lt;h3 id=&quot;summary-of-most-basic-commands&quot;&gt;Summary of most basic commands:&lt;/h3&gt;
@@ -121,6 +125,8 @@ Ctrl+b &quot;			-&amp;gt; Creates horizontal pane
 Ctrl+b %			-&amp;gt; Creates vertical pane
 
 Ctrl+b arrow_keys		-&amp;gt; Move to a pane
+
+Ctrl+b z 			-&amp;gt; Zoom in and out a window pane
 
 tmux kill-server		-&amp;gt; Kill server and all panes
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Upendar Gareri</name></author><summary type="html">What is tmux? It stands for terminal multiplexer. In simple terms, it can multiply a single terminal window into multiple windows.</summary></entry></feed>
