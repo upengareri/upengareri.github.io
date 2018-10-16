@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-16T15:28:34+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Basics of tmux</title><link href="http://localhost:4000/basics_of_tmux/" rel="alternate" type="text/html" title="Basics of tmux" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-19T00:00:00+02:00</updated><id>http://localhost:4000/basics_of_tmux</id><content type="html" xml:base="http://localhost:4000/basics_of_tmux/">&lt;h2 id=&quot;what-is-tmux&quot;&gt;What is tmux?&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-16T16:30:56+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">What is that?</title><link href="http://localhost:4000/what_is_that/" rel="alternate" type="text/html" title="What is that?" /><published>2018-10-16T00:00:00+02:00</published><updated>2018-10-16T00:00:00+02:00</updated><id>http://localhost:4000/what_is_that</id><content type="html" xml:base="http://localhost:4000/what_is_that/">&lt;p&gt;Some terms and jargons.&lt;/p&gt;
+
+&lt;h3 id=&quot;numpy&quot;&gt;Numpy:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; library with fast multi-dimensional array processing capabilities, a container for data&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pandas&quot;&gt;Pandas:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; library that provides data structures and functions to interact with structured and tabular data in an easy and fast way&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;matplotlib&quot;&gt;Matplotlib:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; library for plotting and visualising two-dimensional data&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ipython-and-jupyter&quot;&gt;Ipython and Jupyter:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; for data exploration and visualisation&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;mungemungingwrangling&quot;&gt;Munge/Munging/Wrangling:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; the process of manipulating unstructured or messy data into a structured or clean form&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;pseudocode&quot;&gt;Pseudocode:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; describes an algorithm or process that takes a code like form, usually to describe a logic or flow&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;syntactic-sugar&quot;&gt;Syntactic sugar:&lt;/h3&gt;
+&lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; syntax added to make something easier or convenient to type (does not add feature)&lt;/code&gt;&lt;/p&gt;</content><author><name>Upendar Gareri</name></author><summary type="html">Some terms and jargons.</summary></entry><entry><title type="html">Basics of tmux</title><link href="http://localhost:4000/basics_of_tmux/" rel="alternate" type="text/html" title="Basics of tmux" /><published>2018-09-19T00:00:00+02:00</published><updated>2018-09-19T00:00:00+02:00</updated><id>http://localhost:4000/basics_of_tmux</id><content type="html" xml:base="http://localhost:4000/basics_of_tmux/">&lt;h2 id=&quot;what-is-tmux&quot;&gt;What is tmux?&lt;/h2&gt;
 &lt;p&gt;It stands for &lt;strong&gt;&lt;em&gt;terminal multiplexer&lt;/em&gt;&lt;/strong&gt;. In simple terms, it can multiply a single terminal window into multiple windows.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/images/tmux_start.png&quot; alt=&quot;tmux start&quot; /&gt;&lt;/p&gt;
