@@ -9,9 +9,3 @@ This page is about sharing interesting posts and articles on anything that inter
 
 * [How to think with logarithms and exponents](https://betterexplained.com/articles/think-with-exponents/) 
 * [Normal distribution and standard deviation](https://www.mathsisfun.com/data/standard-normal-distribution.html)
-
-
-## Terminal (Mac)
-
-* [Access external drive](access_external_drive)
-
