@@ -18,5 +18,3 @@ I am a machine learning enthusiast who loves writing code in Python. I have a lo
 * Writing - not seriously but I enjoy it
 * iPhoneograhpy - basically clicking photos on mobile (picture motivates me to write)
 
-
-
