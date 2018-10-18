@@ -43,6 +43,7 @@ h2 {
 }
 
 h3 {
+  color: #FFA07A;
   font-size: $type-size-5;
 }
 
@@ -126,18 +127,18 @@ blockquote {
 /* links */
 
 a {
-  color: $link-color-hover;
+  color: #85C1E9;
   &:focus {
     @extend %tab-focus;
 
   }
 
   &:visited {
-    color: $link-color-visited;
+    color: #A9DFBF;
   }
 
   &:hover {
-    color: $link-color-hover;
+    color: #F7DC6F;
     outline: 0;
   }
 }

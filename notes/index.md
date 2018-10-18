@@ -1,6 +1,6 @@
 ---
 layout: single
-title: My Notes
+title: <span style="color:#ABB2B9">My Notes</span>
 tags: 
 comments: false
 ---
@@ -8,7 +8,7 @@ comments: false
 Here, I provide a list of materials for machine learning related work.
 
 
-## [Dev Tools:](https://github.com/upengareri/fastai_part1/tree/master/tools)
+## Dev Tools<!--(https://github.com/upengareri/fastai_part1/tree/master/tools)-->
 * [Download data with unstable internet connection](https://github.com/upengareri/fastai_part1/blob/master/tools/download_data_curlwget.md)
 * [Multiply your terminal](https://github.com/upengareri/fastai_part1/blob/master/tools/basics_of_tmux.md)
 * [Use symlink for managing huge dataset](https://github.com/upengareri/fastai_part1/blob/master/tools/symlink.md)
@@ -19,3 +19,4 @@ Here, I provide a list of materials for machine learning related work.
 * [Access external drive](access_external_drive)
 
 ## Git
+* [Git cheatsheet](git_cheatsheet)

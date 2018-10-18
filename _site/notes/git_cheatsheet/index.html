@@ -1,0 +1,424 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Github Cheatsheet - Home</title>
+<meta name="description" content="Machine Learning and more.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Github Cheatsheet">
+<meta property="og:url" content="http://localhost:4000/notes/git_cheatsheet/">
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-10-16T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/notes/git_cheatsheet/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Upendar Gareri",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Home Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Home</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/notes/" >Notes</a>
+            </li><li class="masthead__menu-item">
+              <a href="/miscellaneous/" >Miscellaneous</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Github Cheatsheet">
+    
+    <meta itemprop="datePublished" content="October 16, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#ABB2B9">Github Cheatsheet</span>
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="check-git-version-installed-on-your-machine">Check git version installed on your machine</h3>
+<p>  <code class="highlighter-rouge">git --version</code></p>
+
+<h3 id="create-a-new-repository">Create a new repository</h3>
+<ol>
+  <li>Go to the project directory</li>
+  <li>Run <code class="highlighter-rouge">git init</code></li>
+</ol>
+
+<h3 id="-or">       <em><span style="color:orange">or</span></em></h3>
+
+<h3 id="clone-an-existing-repository">Clone an existing repository</h3>
+<p>Cloning is the process of downloading a copy of the repository from a server.
+  <code class="highlighter-rouge">git clone [repository url]</code></p>
+
+<blockquote>
+  <p><em>Note: HTTPS is the recommended url. You might be asked for your Github username and password.</em><br />
+No need to <code class="highlighter-rouge">git init</code> in this case as it automatically does it.</p>
+</blockquote>
+
+<h3 id="check-status-of-the-repository">Check status of the repository</h3>
+<p>  <code class="highlighter-rouge">git status</code></p>
+
+<p style="font-family: 'Lucida Console';color:#181818; background-color:#FEFEFE; padding: 1em; border-radius: 4px;">
+	<b>WORKFLOW THEORY:</b><br />
+	local repository consists of three trees maintained by git.<br />
+	1. <b>Working Directory</b> which holds the actual files.<br />
+	2. <b>Index</b> which acts as a staging area. It's like telling git to track.<br />
+	3. <b>Head</b> which points to the last commit you've made. Technically, points to the branch(master by defalut) which points to the last commit you have made.<br />
+	So, first any changes in your working directory has to be added to the staging area. After that, you need to finally commit the staging area to the Head.<br />
+</p>
+
+<h3 id="add-files-to-the-staging-area-index">Add file(s) to the staging area (INDEX)</h3>
+<p>  <code class="highlighter-rouge">git add &lt;filename&gt;</code> <code class="highlighter-rouge">[adds modified file]</code><br />
+      <strong><span style="color:orange">or</span></strong><br />
+  <code class="highlighter-rouge">git add *</code> <code class="highlighter-rouge">[adds all modified files]</code><br />
+      <strong><span style="color:orange">or</span></strong><br />
+  <code class="highlighter-rouge">git add '*.py'</code> <code class="highlighter-rouge">[adds modified files with .py extension]</code></p>
+
+<h3 id="tell-git-not-to-track-file-anymore">Tell git not to track file anymore</h3>
+<blockquote>
+  <p>If you have manually deleted any file from your working directory and you no longer want to track it<br />
+  <code class="highlighter-rouge">git rm filename</code><br />
+If the filename is within a folder<br /> 
+  <code class="highlighter-rouge">git rm folder/filename</code><br />
+If it was a directory that you deleted<br /> 
+  <code class="highlighter-rouge">git rm -r folder</code></p>
+</blockquote>
+
+<blockquote>
+  <p>If you have not manually deleted any file but just want to ignore or untrack that file<br />
+  <code class="highlighter-rouge">git rm --cached filename</code></p>
+</blockquote>
+
+<blockquote>
+  <p>To both delete (automatically) as well as untrack file at the same time<br />
+  <code class="highlighter-rouge">git rm -f filename</code><br />
+<strong>Warning:</strong> This will delete the file from your working directory</p>
+</blockquote>
+
+<h3 id="commit-files-head">Commit file(s) (HEAD)</h3>
+<p>  <code class="highlighter-rouge">git commit -m "Some message about the changes you made"</code></p>
+
+<blockquote>
+  <p><em>Note: The file is committed to the <strong>HEAD</strong>, but not in your <strong>REMOTE</strong> repository yet</em></p>
+</blockquote>
+
+<h3 id="push-changes-to-remote-online-repository">Push changes to remote (online) repository</h3>
+<p>  <code class="highlighter-rouge">git push -u origin master</code></p>
+<blockquote>
+  <ul>
+    <li><em>This is when you have cloned an existing repository.</em><br /></li>
+    <li>master is the name of the branch and origin is the default name of the repository<br /></li>
+    <li>-u links the local branch with remote branch so that later we can use git pull without arguments</li>
+  </ul>
+</blockquote>
+
+<p>  <code class="highlighter-rouge">git push add origin &lt;server_url&gt;</code></p>
+<blockquote>
+  <ul>
+    <li><em>This is when you have not cloned an existing repository and want to connect to a new repository.</em><br /></li>
+    <li><em>You need to go to github.com, create a new repository and use the repository’s url.</em></li>
+  </ul>
+</blockquote>
+
+<h3 id="view-all-branches">View all branches</h3>
+<p>  <code class="highlighter-rouge">git branch</code></p>
+
+<h3 id="create-branch">Create branch</h3>
+<p>  <code class="highlighter-rouge">git branch &lt;feature_x&gt;</code></p>
+
+<h3 id="switch-to-a-branch">Switch to a branch</h3>
+<p>  <code class="highlighter-rouge">git checkout &lt;feature_x&gt;</code></p>
+
+<h3 id="create-branch-and-switch-to-it">Create branch and switch to it</h3>
+<p>  <code class="highlighter-rouge">git checkout -b &lt;feature_x&gt;</code></p>
+
+<h3 id="delete-a-branch-soft-delete">Delete a branch (soft delete)</h3>
+<p>  <code class="highlighter-rouge">git branch -d &lt;feature_x&gt;</code></p>
+<blockquote>
+  <p>It’ll complain if the branch is not merged</p>
+</blockquote>
+
+<h3 id="delete-a-branch-hard-delete">Delete a branch (hard delete)</h3>
+<p>  <code class="highlighter-rouge">git branch -D &lt;feature_x&gt;</code></p>
+<blockquote>
+  <p>It’ll not complain if the branch is not merged</p>
+</blockquote>
+
+<h3 id="merge-one-branch-into-another">Merge one branch into another</h3>
+<blockquote>
+  <p>Switch to the branch you want to pull changes into<br />
+  <code class="highlighter-rouge">git branch master</code><br />
+Pull changes from another branch<br />
+  <code class="highlighter-rouge">git merge feature_x</code></p>
+</blockquote>
+
+<h3 id="pull-down-latest-commit-from-remote-to-local-repository">Pull down latest commit from remote to local repository</h3>
+<p>  <code class="highlighter-rouge">git pull origin master</code></p>
+
+<h3 id="view-all-remote-branches">View all remote branches</h3>
+<p>  <code class="highlighter-rouge">git branch --remote</code></p>
+
+<h3 id="view-log-repository-history">View log (repository history)</h3>
+<p>  <code class="highlighter-rouge">git log</code></p>
+
+<blockquote>
+  <p>To see commits of a certain author:   <code class="highlighter-rouge">git log --author=upen</code><br />
+To see each commit is one line:   <code class="highlighter-rouge">git log --pretty=online</code><br />
+To see which files changed in every commit: <code class="highlighter-rouge">git log --name-status</code><br />
+To see art tree of all branches:  <code class="highlighter-rouge">git log --graph --oneline --decorate --all</code></p>
+</blockquote>
+
+<h3 id="edit-a-commit">Edit a commit</h3>
+<blockquote>
+  <p>To edit a commit message<br />
+  <code class="highlighter-rouge">git commit --ammend</code><br /> 
+  <code class="highlighter-rouge">git commit --ammend -m "New message"</code></p>
+</blockquote>
+
+<blockquote>
+  <p>Did you forget to add a file?<br />
+  <code class="highlighter-rouge">git add forgotten_file</code><br />
+  <code class="highlighter-rouge">git commit --ammend</code></p>
+</blockquote>
+
+<h3 id="view-unstaged-changes-to-files">View unstaged changes to files</h3>
+<p>  <code class="highlighter-rouge">git diff</code></p>
+
+<h3 id="unstage-a-file">Unstage a file</h3>
+<p>  <code class="highlighter-rouge">git reset filename</code></p>
+
+<h3 id="undo-last-commit-and-move-commit-changes-to-staging">Undo last commit and move commit changes to staging</h3>
+<p>  <code class="highlighter-rouge">git reset --soft HEAD^</code></p>
+
+<h3 id="undo-last-commit-and-drop-all-your-local-changes">Undo last commit and drop all your local changes</h3>
+<p>  <code class="highlighter-rouge">git reset --hard HEAD^</code></p>
+
+<h3 id="save-current-changes-without-having-to-stage-or-commit">Save current changes, without having to stage or commit</h3>
+<p>  <code class="highlighter-rouge">git stash</code> [&gt;This is done in case you are wor]ing on something messy and let’s say your boss
+pops out of nowhere and now you have to show him/her your working feature. You can thus
+use this command to save all your local and stage changes somewhere, and now you are on last clean commit.</p>
+
+<h3 id="to-return-to-those-changes">To return to those changes</h3>
+<p>  <code class="highlighter-rouge">git stash pop</code></p>
+
+<h2 id="for-in-depth-understanding-of-git">For in-depth understanding of git:</h2>
+<p><a href="https://book.git-scm.com/book/en/v2]">Git Pro ebook</a></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-16T00:00:00+02:00">October 16, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Upendar Gareri. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  </body>
+</html>

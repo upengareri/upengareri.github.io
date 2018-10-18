@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Access external drive
+title: <span style="color:#ABB2B9">Access external drive</span>
 date: 2018-10-16
 
 ---
