@@ -135,7 +135,8 @@ To see art tree of all branches:&emsp; `git log --graph --oneline --decorate --a
 &emsp;&emsp;`git reset --hard HEAD^` 
 
 ### Save current changes, without having to stage or commit 
-&emsp;&emsp;`git stash` [>This is done in case you are wor]ing on something messy and let's say your boss
+&emsp;&emsp;`git stash` 
+>This is done in case you are wor]ing on something messy and let's say your boss
 pops out of nowhere and now you have to show him/her your working feature. You can thus
 use this command to save all your local and stage changes somewhere, and now you are on last clean commit.
 
