@@ -297,17 +297,21 @@ To see which files changed in every commit: <code class="highlighter-rouge">git 
 To see art tree of all branches:  <code class="highlighter-rouge">git log --graph --oneline --decorate --all</code></p>
 </blockquote>
 
-<h3 id="edit-a-commit">Edit a commit</h3>
+<h3 id="edit-the-last-commit">Edit the last commit</h3>
 <blockquote>
-  <p>To edit a commit message<br />
-  <code class="highlighter-rouge">git commit --ammend</code><br /> 
-  <code class="highlighter-rouge">git commit --ammend -m "New message"</code></p>
+  <p>Let’s say you forgot to add a slight change or missed adding one file to your last commit.<br />
+  <code class="highlighter-rouge">git add forgotten_file</code><br /> 
+  <code class="highlighter-rouge">git commit --amend</code><br /> 
+It’ll open the editor to change the commit message. Do as per your need and save changes.<br />
+Now, push the amended commit.<br />
+  <code class="highlighter-rouge">git push -f origin master</code><br /></p>
 </blockquote>
 
+<p><strong><em>Note:</em></strong> Pushing with -f is dangerous. This might mess up your teammates work in the last commit.</p>
+
 <blockquote>
-  <p>Did you forget to add a file?<br />
-  <code class="highlighter-rouge">git add forgotten_file</code><br />
-  <code class="highlighter-rouge">git commit --ammend</code></p>
+  <p>To edit a commit message <br />
+  <code class="highlighter-rouge">git commit --amend -m "New message"</code></p>
 </blockquote>
 
 <h3 id="view-unstaged-changes-to-files">View unstaged changes to files</h3>
