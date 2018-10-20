@@ -20,3 +20,11 @@ Here, I provide a list of materials for machine learning related work.
 
 ## Git
 * [Git cheatsheet](git_cheatsheet)
+
+
+## Python
+
+|Tips | | |
+|-|-|-|
+|[Targeting Python 2 & 3](python/targeting_python_2_3)|  |
+|  |  |
