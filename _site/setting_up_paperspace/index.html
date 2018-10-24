@@ -1,0 +1,544 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Setting up Paperspace for FAST.AI - Home</title>
+<meta name="description" content="1. Installed Ubuntu 16 as OS  You can install fast.ai template as well which will save you from step 2">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Setting up Paperspace for FAST.AI">
+<meta property="og:url" content="http://localhost:4000/setting_up_paperspace/">
+
+
+  <meta property="og:description" content="1. Installed Ubuntu 16 as OS  You can install fast.ai template as well which will save you from step 2">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-10-24T00:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/setting_up_paperspace/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Upendar Gareri",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Home Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Home</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/notes/" >Notes</a>
+            </li><li class="masthead__menu-item">
+              <a href="/miscellaneous/" >Miscellaneous</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Setting up Paperspace for FAST.AI">
+    <meta itemprop="description" content="1. Installed Ubuntu 16 as OS  You can install fast.ai template as well which will save you from step 2">
+    <meta itemprop="datePublished" content="October 24, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Setting up Paperspace for FAST.AI
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h3 id="1-installed-ubuntu-16-as-os">1. Installed Ubuntu 16 as OS</h3>
+<blockquote>
+  <p>You can install fast.ai template as well which will save you from step 2</p>
+</blockquote>
+
+<ul>
+  <li>I chose P4000 as the machine, 50GB storage and public IP.</li>
+</ul>
+
+<h3 id="2-to-install-fastai-setup">2. To install fast.ai setup</h3>
+
+<ul>
+  <li>After you start the remote machine, you will be provided with the open terminal.</li>
+</ul>
+
+<blockquote>
+  <p>The recommended setup using <br /><code class="highlighter-rouge">curl http://files.fast.ai/setup/paperspace | bash</code><br /> in the terminal didn’t
+work for me and was showing error in line <code class="highlighter-rouge">rm /etc/apt/apt.conf.d/</code> and so I had to follow the below 3 steps.<br />
+If it works for you, then you can ignore the below points under this section.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Download the below setup script from that terminal</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  curl http://files.fast.ai/setup/paperspace  &gt; fastai-setup.sh
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>If you <code class="highlighter-rouge">ls</code>, you will see it in the current directory</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Edit the file <strong><em>fastai-setup.sh</em></strong> and remove line <strong><em>“sudo rm /etc/apt/apt.conf.d/.”</em></strong></p>
+  </li>
+  <li>
+    <p>Save the file and run the below commands one by one:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  chmod +x fastai-setup.sh
+  ./fastai-setup.sh
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>It’ll take 30-40 minutes to download the fast.ai resources and programs for the course.<br />
+After that you can see all the folders using the command <code class="highlighter-rouge">ls</code>. It’ll show folders such as <br />
+anaconda3/        data/      downloads/      fastai/</p>
+</blockquote>
+
+<h3 id="3-to-change-paperspace-password">3. To change Paperspace password</h3>
+
+<ul>
+  <li>
+    <p>In remote terminal type:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  passwd
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To change sudo password type:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo passwd
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="4-update-repo-time-to-time">4. Update repo (time to time)</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    cd fastai
+    git pull
+</code></pre></div></div>
+
+<h3 id="5-update-conda-time-to-time">5. Update conda (time to time)</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    conda env update
+</code></pre></div></div>
+
+<h3 id="6-run-jupyter-notebook">6. Run jupyter notebook</h3>
+
+<ul>
+  <li>
+    <p>The updated jupyter notebook breaks if you normally run ‘jupyter notebook’ in a terminal. To fix this, overwrite the file using the below command</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  jupyter notebook --generate-config
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Type <code class="highlighter-rouge">y</code> to overwrite</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Run the below command from your remote terminal:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  jupyter notebook --no-browser --port=8889 --NotebookApp.allow_remote_access=True
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Now, go to your <strong><em>LOCAL TERMINAL</em></strong> and run</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ssh -N -L localhost:8888:localhost:8889 paperspace@your.public.ip.here
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>You’ll have to provide your paperspace password after which you can copy paste the notebook URL in your browser and change the port from 8889 to 8888 which should load the notebook correctly.</p>
+</blockquote>
+
+<h3 id="7-permanent-solution-to-run-notebook-from-local-terminal-and-without-paperspace-password">7. Permanent solution to run notebook from local terminal and without paperspace password</h3>
+
+<blockquote>
+  <p>In order to save time in paperspace authentication (every time you start the machine) and using step 6 to open notebook from local browser, you can run the below commands in your <strong><em>LOCAL TERMINAL</em></strong>.</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Run the below three commands one by one:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  brew install ssh-copy-id
+  cd ~/.ssh
+  ssh-copy-id -i ~/.ssh/id_rsa.pub paperspace@your.public.ip.here
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a config file:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  nano config
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Make sure you are in ssh directory when you create a config file</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Add below contents (replace <code class="highlighter-rouge">your.public.ip.here</code> with actual IP from paperspace) to the config file:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Host paperspace
+      HostName your.public.ip.here
+      IdentityFile ~/.ssh/id_rsa
+      # StrictHostKeyChecking no  
+      User paperspace
+      LocalForward 8888 localhost:8888
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Save nano file</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ctrl o
+  Enter
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Exit nano file</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ctrl x
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>SSH into paperspace from your local terminal</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ssh paperspace
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run jupyter notebook</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cd fastai
+  jupyter notebook
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Copy paster the URL and voila!!<br />
+Next time you just need to turn on your remote server in Paperspace and then go to your local terminal and type <code class="highlighter-rouge">ssh paperspace</code>, and use your <code class="highlighter-rouge">jupyter notebook</code> from there.</p>
+</blockquote>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-24T00:00:00+02:00">October 24, 2018</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Setting+up+Paperspace+for+FAST.AI%20http%3A%2F%2Flocalhost%3A4000%2Fsetting_up_paperspace%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsetting_up_paperspace%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fsetting_up_paperspace%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsetting_up_paperspace%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/what_is_that/" class="pagination--pager" title="What is that?
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You may also enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/what_is_that/" rel="permalink">What is that?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some terms and jargons.
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/basics_of_tmux/" rel="permalink">Basics of tmux
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">What is tmux?
+It stands for terminal multiplexer. In simple terms, it can multiply a single terminal window into multiple windows.
+
+</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Upendar Gareri. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+
+  
+
+
+
+  </body>
+</html>

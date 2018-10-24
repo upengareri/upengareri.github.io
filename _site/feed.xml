@@ -1,4 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-20T18:26:31+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">What is that?</title><link href="http://localhost:4000/what_is_that/" rel="alternate" type="text/html" title="What is that?" /><published>2018-10-16T00:00:00+02:00</published><updated>2018-10-16T00:00:00+02:00</updated><id>http://localhost:4000/what_is_that</id><content type="html" xml:base="http://localhost:4000/what_is_that/">&lt;p&gt;Some terms and jargons.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-24T15:44:38+02:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Setting up Paperspace for FAST.AI</title><link href="http://localhost:4000/setting_up_paperspace/" rel="alternate" type="text/html" title="Setting up Paperspace for FAST.AI" /><published>2018-10-24T00:00:00+02:00</published><updated>2018-10-24T00:00:00+02:00</updated><id>http://localhost:4000/setting_up_paperspace</id><content type="html" xml:base="http://localhost:4000/setting_up_paperspace/">&lt;h3 id=&quot;1-installed-ubuntu-16-as-os&quot;&gt;1. Installed Ubuntu 16 as OS&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;You can install fast.ai template as well which will save you from step 2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I chose P4000 as the machine, 50GB storage and public IP.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;2-to-install-fastai-setup&quot;&gt;2. To install fast.ai setup&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;After you start the remote machine, you will be provided with the open terminal.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The recommended setup using &lt;br /&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;curl http://files.fast.ai/setup/paperspace | bash&lt;/code&gt;&lt;br /&gt; in the terminal didn’t
+work for me and was showing error in line &lt;code class=&quot;highlighter-rouge&quot;&gt;rm /etc/apt/apt.conf.d/&lt;/code&gt; and so I had to follow the below 3 steps.&lt;br /&gt;
+If it works for you, then you can ignore the below points under this section.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download the below setup script from that terminal&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  curl http://files.fast.ai/setup/paperspace  &amp;gt; fastai-setup.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;, you will see it in the current directory&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Edit the file &lt;strong&gt;&lt;em&gt;fastai-setup.sh&lt;/em&gt;&lt;/strong&gt; and remove line &lt;strong&gt;&lt;em&gt;“sudo rm /etc/apt/apt.conf.d/.”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Save the file and run the below commands one by one:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  chmod +x fastai-setup.sh
+  ./fastai-setup.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It’ll take 30-40 minutes to download the fast.ai resources and programs for the course.&lt;br /&gt;
+After that you can see all the folders using the command &lt;code class=&quot;highlighter-rouge&quot;&gt;ls&lt;/code&gt;. It’ll show folders such as &lt;br /&gt;
+anaconda3/        data/      downloads/      fastai/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;3-to-change-paperspace-password&quot;&gt;3. To change Paperspace password&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;In remote terminal type:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To change sudo password type:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sudo passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4-update-repo-time-to-time&quot;&gt;4. Update repo (time to time)&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    cd fastai
+    git pull
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;5-update-conda-time-to-time&quot;&gt;5. Update conda (time to time)&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    conda env update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;6-run-jupyter-notebook&quot;&gt;6. Run jupyter notebook&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The updated jupyter notebook breaks if you normally run ‘jupyter notebook’ in a terminal. To fix this, overwrite the file using the below command&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  jupyter notebook --generate-config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Type &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; to overwrite&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the below command from your remote terminal:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  jupyter notebook --no-browser --port=8889 --NotebookApp.allow_remote_access=True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now, go to your &lt;strong&gt;&lt;em&gt;LOCAL TERMINAL&lt;/em&gt;&lt;/strong&gt; and run&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ssh -N -L localhost:8888:localhost:8889 paperspace@your.public.ip.here
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You’ll have to provide your paperspace password after which you can copy paste the notebook URL in your browser and change the port from 8889 to 8888 which should load the notebook correctly.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;7-permanent-solution-to-run-notebook-from-local-terminal-and-without-paperspace-password&quot;&gt;7. Permanent solution to run notebook from local terminal and without paperspace password&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In order to save time in paperspace authentication (every time you start the machine) and using step 6 to open notebook from local browser, you can run the below commands in your &lt;strong&gt;&lt;em&gt;LOCAL TERMINAL&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run the below three commands one by one:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  brew install ssh-copy-id
+  cd ~/.ssh
+  ssh-copy-id -i ~/.ssh/id_rsa.pub paperspace@your.public.ip.here
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a config file:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  nano config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Make sure you are in ssh directory when you create a config file&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add below contents (replace &lt;code class=&quot;highlighter-rouge&quot;&gt;your.public.ip.here&lt;/code&gt; with actual IP from paperspace) to the config file:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Host paperspace
+      HostName your.public.ip.here
+      IdentityFile ~/.ssh/id_rsa
+      # StrictHostKeyChecking no  
+      User paperspace
+      LocalForward 8888 localhost:8888
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Save nano file&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ctrl o
+  Enter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Exit nano file&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ctrl x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SSH into paperspace from your local terminal&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ssh paperspace
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Run jupyter notebook&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  cd fastai
+  jupyter notebook
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Copy paster the URL and voila!!&lt;br /&gt;
+Next time you just need to turn on your remote server in Paperspace and then go to your local terminal and type &lt;code class=&quot;highlighter-rouge&quot;&gt;ssh paperspace&lt;/code&gt;, and use your &lt;code class=&quot;highlighter-rouge&quot;&gt;jupyter notebook&lt;/code&gt; from there.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Upendar Gareri</name></author><summary type="html">1. Installed Ubuntu 16 as OS You can install fast.ai template as well which will save you from step 2</summary></entry><entry><title type="html">What is that?</title><link href="http://localhost:4000/what_is_that/" rel="alternate" type="text/html" title="What is that?" /><published>2018-10-16T00:00:00+02:00</published><updated>2018-10-16T00:00:00+02:00</updated><id>http://localhost:4000/what_is_that</id><content type="html" xml:base="http://localhost:4000/what_is_that/">&lt;p&gt;Some terms and jargons.&lt;/p&gt;
 
 &lt;h3 id=&quot;numpy&quot;&gt;Numpy:&lt;/h3&gt;
 &lt;p&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt; library with fast multi-dimensional array processing capabilities, a container for data&lt;/code&gt;&lt;/p&gt;
