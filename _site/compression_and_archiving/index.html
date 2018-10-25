@@ -9,38 +9,38 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>What is that? - Home</title>
-<meta name="description" content="Some terms and jargons.">
+<!-- begin _includes/seo.html --><title>Difference between .tar, .gz, .tar.gz, .zip - Home</title>
+<meta name="description" content="We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below -">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Home">
-<meta property="og:title" content="What is that?">
-<meta property="og:url" content="http://localhost:4000/what_is_that/">
+<meta property="og:title" content="Difference between .tar, .gz, .tar.gz, .zip">
+<meta property="og:url" content="http://localhost:4000/compression_and_archiving/">
 
 
-  <meta property="og:description" content="Some terms and jargons.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2018-10-16T00:00:00+02:00">
+  <meta property="og:description" content="We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below -">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2018-10-25T00:00:00+02:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/what_is_that/">
+
+<link rel="canonical" href="http://localhost:4000/compression_and_archiving/">
 
 
 
@@ -150,15 +150,15 @@
   
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="What is that?">
-    <meta itemprop="description" content="Some terms and jargons.">
-    <meta itemprop="datePublished" content="October 16, 2018">
+    <meta itemprop="headline" content="Difference between .tar, .gz, .tar.gz, .zip">
+    <meta itemprop="description" content="We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below -">
+    <meta itemprop="datePublished" content="October 25, 2018">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">What is that?
+          <h1 id="page-title" class="page__title" itemprop="headline">Difference between .tar, .gz, .tar.gz, .zip
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -166,7 +166,7 @@
 
 
 
-  less than 1 minute read
+  1 minute read
 </p>
           
         </header>
@@ -174,28 +174,98 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Some terms and jargons.</p>
+        <p>We can see different kinds of file extensions while downloading the dataset.
+Some of the most common archiving and compression formats are discussed below -</p>
 
-<h3 id="numpy">Numpy:</h3>
-<p> <code class="highlighter-rouge"> library with fast multi-dimensional array processing capabilities, a container for data</code></p>
+<h3 id="1-tar">1) .tar</h3>
 
-<h3 id="pandas">Pandas:</h3>
-<p> <code class="highlighter-rouge"> library that provides data structures and functions to interact with structured and tabular data in an easy and fast way</code></p>
+<ul>
+  <li>It stands for tape archive.</li>
+  <li>It simply puts multiple files together</li>
+  <li>It does not reduce the size i.e no compression technique</li>
+</ul>
 
-<h3 id="matplotlib">Matplotlib:</h3>
-<p> <code class="highlighter-rouge"> library for plotting and visualising two-dimensional data</code></p>
+<p>Command to archive files in terminal (MAC):</p>
 
-<h3 id="ipython-and-jupyter">Ipython and Jupyter:</h3>
-<p> <code class="highlighter-rouge"> for data exploration and visualisation</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -cf files.tar file1 file2
+</code></pre></div></div>
 
-<h3 id="mungemungingwrangling">Munge/Munging/Wrangling:</h3>
-<p> <code class="highlighter-rouge"> the process of manipulating unstructured or messy data into a structured or clean form</code></p>
+<p>Command to unarchive files in terminal (MAC):</p>
 
-<h3 id="pseudocode">Pseudocode:</h3>
-<p> <code class="highlighter-rouge"> describes an algorithm or process that takes a code like form, usually to describe a logic or flow</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xf files.tar
+</code></pre></div></div>
 
-<h3 id="syntactic-sugar">Syntactic sugar:</h3>
-<p> <code class="highlighter-rouge"> syntax added to make something easier or convenient to type (does not add feature)</code></p>
+<blockquote>
+  <p>Note: tar is in-built in Mac</p>
+</blockquote>
+
+<h3 id="2-gz">2) .gz</h3>
+
+<ul>
+  <li>It is produced by gzip compression tool</li>
+  <li>It compresses only one file</li>
+  <li>If you compress multiple files with gzip, it produces multiple .gz files</li>
+  <li>It is common in Unix/Linux</li>
+</ul>
+
+<p>Command to compress file in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip file
+</code></pre></div></div>
+
+<p>Command to decompress file in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip -d file.gz
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: gzip is in-built in Mac</p>
+</blockquote>
+
+<h3 id="3-targz">3) .tar.gz</h3>
+<ul>
+  <li>It is a combination of .tar and .gz i.e. it is a tar archive file that has been compressed with gzip</li>
+  <li>It is mostly common in Unix/Linux</li>
+</ul>
+
+<p>Command to both archive and compress files in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czf files.tar.gz file1 file2
+</code></pre></div></div>
+
+<p>Command to both unarchive and decompress files in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xzf files.tar.gz
+</code></pre></div></div>
+
+<h3 id="4-tgz">4) .tgz</h3>
+<ul>
+  <li>.tar.gz file is often called as .tgz</li>
+</ul>
+
+<h3 id="5-zip">5) .zip</h3>
+
+<ul>
+  <li>It does the purpose of tar as well as have built-in compression</li>
+  <li>It is mostly common in Windows rather than Unix</li>
+</ul>
+
+<p>Command to both archive and compress files in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip files.zip file1 file2
+</code></pre></div></div>
+
+<p>Command to both unarchive and decompress files in terminal (MAC):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unzip files.zip
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: unzip in not in-built in Mac and to install it use</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">brew install unzip</code></p>
+
 
         
       </section>
@@ -206,7 +276,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-16T00:00:00+02:00">October 16, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-25T00:00:00+02:00">October 25, 2018</time></p>
         
       </footer>
 
@@ -215,25 +285,24 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=What+is+that%3F%20http%3A%2F%2Flocalhost%3A4000%2Fwhat_is_that%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Difference+between+.tar%2C+.gz%2C+.tar.gz%2C+.zip%20http%3A%2F%2Flocalhost%3A4000%2Fcompression_and_archiving%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fwhat_is_that%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcompression_and_archiving%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fwhat_is_that%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=http%3A%2F%2Flocalhost%3A4000%2Fcompression_and_archiving%2F" class="btn btn--google-plus" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Google Plus"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fwhat_is_that%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcompression_and_archiving%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/basics_of_tmux/" class="pagination--pager" title="Basics of tmux
+      <a href="/setting_up_paperspace/" class="pagination--pager" title="Setting up Paperspace for FAST.AI
 ">Previous</a>
     
     
-      <a href="/setting_up_paperspace/" class="pagination--pager" title="Setting up Paperspace for FAST.AI
-">Next</a>
+      <a href="#" class="pagination--pager disabled">Next</a>
     
   </nav>
 
@@ -247,35 +316,6 @@
     <div class="page__related">
       <h4 class="page__related-title">You may also enjoy</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/compression_and_archiving/" rel="permalink">Difference between .tar, .gz, .tar.gz, .zip
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  1 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">We can see different kinds of file extensions while downloading the dataset.
-Some of the most common archiving and compression formats are discussed below -
-
-</p>
-  </article>
-</div>
         
           
 
@@ -303,6 +343,34 @@ Some of the most common archiving and compression formats are discussed below -
 
   You can install fast.ai template as well which will save you from step 2
 
+
+</p>
+  </article>
+</div>
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/what_is_that/" rel="permalink">What is that?
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some terms and jargons.
 
 </p>
   </article>

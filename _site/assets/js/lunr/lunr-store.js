@@ -13,4 +13,9 @@ var store = [{
         "excerpt":"1. Installed Ubuntu 16 as OS You can install fast.ai template as well which will save you from step 2 I chose P4000 as the machine, 50GB storage and public IP.2. To install fast.ai setup After you start the remote machine, you will be provided with the open terminal. The...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/setting_up_paperspace/",
+        "teaser":null},{
+        "title": "Difference between .tar, .gz, .tar.gz, .zip",
+        "excerpt":"We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below - 1) .tar It stands for tape archive. It simply puts multiple files together It does not reduce the size i.e no compression techniqueCommand to archive files...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/compression_and_archiving/",
         "teaser":null}]
