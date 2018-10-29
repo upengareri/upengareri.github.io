@@ -26,5 +26,5 @@ Here, I provide a list of materials for machine learning related work.
 
 |Tips | | |
 |-|-|-|
-|[Targeting Python 2 & 3](python/targeting_python_2_3)|  |
-|  |  |
+|[Targeting Python 2 & 3](python/targeting_python_2_3)| [Joining arrays and strings](python/joining_arrays_and_strings) |
+|[Downloading data with Python](python/downloading_data) |  |
