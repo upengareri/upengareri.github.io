@@ -317,9 +317,26 @@
 <span class="n">hello</span> <span class="n">world</span>
 </code></pre></div></div>
 
-<h3 id="2-use-join-to-concatenate-list-of-strings">2. Use ‘join’ to concatenate list of strings</h3>
+<h3 id="2-f-string">2. f-string</h3>
+<p>Instead of using ‘+’, a new type of string formatting in Python 3.6+ can also be used for concatenating strings.</p>
 
 <p><em>Example 2.1</em></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">"https://www2.census.gov/geo/tiger/GENZ2017/shp/"</span>
+<span class="nb">file</span> <span class="o">=</span> <span class="s">"cb_2017_02_tract_500k.zip"</span>
+<span class="n">fullpath</span> <span class="o">=</span> <span class="n">f</span><span class="s">'{url}{file}'</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fullpath</span><span class="p">)</span>
+
+<span class="n">OUTPUT</span><span class="p">:</span>
+<span class="s">'https://www2.census.gov/geo/tiger/GENZ2017/shp/cb_2017_02_tract_500k.zip'</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>For more information on f-string, check <a href="../f_string">Efficient way of string formatting: Python 3’s f-string</a></p>
+</blockquote>
+
+<h3 id="3-use-join-to-concatenate-list-of-strings">3. Use ‘join’ to concatenate list of strings</h3>
+
+<p><em>Example 3.1</em></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">‘</span> <span class="err">‘</span> <span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="err">‘</span><span class="n">hello</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">world</span><span class="err">’</span><span class="p">])</span>
 
@@ -327,7 +344,7 @@
 <span class="n">hello</span> <span class="n">world</span>
 </code></pre></div></div>
 
-<p><em>Example 2.1</em></p>
+<p><em>Example 3.2</em></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">‘</span><span class="p">,</span><span class="err">‘</span> <span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="err">‘</span><span class="n">hello</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="n">world</span><span class="err">’</span><span class="p">])</span>
 
@@ -336,7 +353,7 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p>Notice that the object before the join acts as a separator. In <em>Example 2.1</em>, ‘space’ acts as a separator whereas in <em>Example 2.2</em>, ‘comma’ acts as separator</p>
+  <p>Notice that the object before the join acts as a separator. In <em>Example 3.1</em>, ‘space’ acts as a separator whereas in <em>Example 3.2</em>, ‘comma’ acts as separator</p>
 </blockquote>
 
 <h2 id="summary">SUMMARY</h2>
@@ -352,6 +369,7 @@
 
 <h3 id="for-string">FOR STRING:</h3>
 <p><strong><em>’+’:</em></strong> <code class="highlighter-rouge">for adding two/more simple objects</code><br />
+<strong><em>‘f-string’:</em></strong> <code class="highlighter-rouge">new and efficient way of formatting and concatenating string objects</code><br />
 <strong><em>‘join’:</em></strong> <code class="highlighter-rouge">for list of string objects</code></p>
 
 

@@ -146,9 +146,25 @@ OUTPUT:
 hello world
 ```
 
-### 2. Use 'join' to concatenate list of strings
+### 2. f-string
+Instead of using '+', a new type of string formatting in Python 3.6+ can also be used for concatenating strings.
 
 _Example 2.1_
+```python
+url = "https://www2.census.gov/geo/tiger/GENZ2017/shp/"
+file = "cb_2017_02_tract_500k.zip"
+fullpath = f'{url}{file}'
+print(fullpath)
+
+OUTPUT:
+'https://www2.census.gov/geo/tiger/GENZ2017/shp/cb_2017_02_tract_500k.zip'
+```
+
+> For more information on f-string, check [Efficient way of string formatting: Python 3's f-string](../f_string) 
+
+### 3. Use 'join' to concatenate list of strings
+
+_Example 3.1_
 
 ```python
 ‘ ‘ .join([‘hello’, ‘world’])
@@ -158,7 +174,7 @@ hello world
 ```
 
 
-_Example 2.1_
+_Example 3.2_
 
 ```python
 ‘,‘ .join([‘hello’, ‘world’])
@@ -167,7 +183,7 @@ OUTPUT:
 hello,world
 ```
 
-> Notice that the object before the join acts as a separator. In _Example 2.1_, 'space' acts as a separator whereas in _Example 2.2_, 'comma' acts as separator
+> Notice that the object before the join acts as a separator. In _Example 3.1_, 'space' acts as a separator whereas in _Example 3.2_, 'comma' acts as separator
 
 
 ## SUMMARY
@@ -181,5 +197,6 @@ ___extend:___ `to combine elements of another iterable to a list.`
 
 ### FOR STRING:
 ___'+':___ `for adding two/more simple objects`<br/>
+___'f-string':___ `new and efficient way of formatting and concatenating string objects`<br/>
 ___'join':___ `for list of string objects`
 
