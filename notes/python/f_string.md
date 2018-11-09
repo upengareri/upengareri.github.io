@@ -1,12 +1,14 @@
 ---
 layout: single
-title: <span style="color:#ABB2B9">Efficient way of string formatting - Python 3's f-string</span>
+title: <span style="color:#62c462">Efficient way of string formatting - Python 3's f-string</span>
 date: 2018-10-30
 ---
 
 Before diving into f-string introduced in Python 3.6, let's talk about the other two string formatting options available in Python.
 
-### Option 1: % formatting
+<!-------------------------- OPTION 1 ------------------>
+
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 1: % formatting</h2>
 
 > Note: % formatting is not recommended by Python docs now.
 
@@ -25,7 +27,9 @@ _Example 1.1:_
 - not readable
 - with more arguments, things get messy
 
-### Option 2: str.format
+<!-------------------------- OPTION 2 ------------------>
+
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 2: str.format</h2>
 
 <span style="color:#F5B7B1">`How to use it?`</span>
 
@@ -53,8 +57,9 @@ _Example 2.2:_
 
 - better than % formatting but still very verbose when dealing with multiple parameters
 
+<!-------------------------- OPTION 3 ------------------>
 
-### Option 3: f-string
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 3: f-string</h2>
 
 This is the most efficient option if you are using Python 3.6 or greater.
 
@@ -114,5 +119,9 @@ _Example 3.5:_ ___Multiline___
 ```
 > You have to put 'f' in front of every line.
 
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">SUMMARY</h2>
 
+For Python version >=3.6, use `f-string`
+
+	f'My name is {name}'
 

@@ -28,3 +28,7 @@ Here, I provide a list of materials for machine learning related work.
 |-|-|-|
 |[Targeting Python 2 & 3](python/targeting_python_2_3)| [Joining arrays and strings](python/joining_arrays_and_strings) |
 |[Downloading data with Python](python/downloading_data) | [Efficient way of string formatting: f-string](python/f_string) |
+|[Extracting archived files](python/extracting_archived_files)| [Downloading and extracting archived files](python/downloading_and_extracting)|
+
+
+## Regular Expressions

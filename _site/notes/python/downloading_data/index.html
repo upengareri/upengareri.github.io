@@ -27,7 +27,7 @@
 
 
 
-  <meta property="article:published_time" content="2018-10-26T00:00:00+02:00">
+  <meta property="article:published_time" content="2018-10-31T00:00:00+01:00">
 
 
 
@@ -150,13 +150,13 @@
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="Downloading data with Python">
     
-    <meta itemprop="datePublished" content="October 26, 2018">
+    <meta itemprop="datePublished" content="October 31, 2018">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#ABB2B9">Downloading data with Python</span>
+          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#62c462">Downloading data with Python</span>
 </h1>
           
         </header>
@@ -164,7 +164,82 @@
 
       <section class="page__content" itemprop="text">
         
-        
+        <p>Here, we go through some of the ways in which we can download files in Python.</p>
+
+<blockquote>
+  <p>Note: Although we can do a lot with the below mentioned modules, we’ll focus only on downloading files.</p>
+</blockquote>
+
+<p>Let’s say we want to download an image from <strong>http://google.com/favicon.ico</strong></p>
+
+<h2 id="option-1-for-python-2">Option 1: (for Python 2)</h2>
+
+<h3 id="import-urllib2">import urllib2</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://google.com/favicon.ico"</span>
+<span class="n">dest</span> <span class="o">=</span> <span class="s">"./tmp/icon.ico"</span>
+<span class="n">filedata</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c"># returns an object</span>
+
+<span class="n">data_to_write</span> <span class="o">=</span> <span class="n">filedata</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data_to_write</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="option-2-for-python-3">Option 2: (for Python 3)</h2>
+
+<h3 id="import-urllibrequest">import urllib.request</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://google.com/favicon.ico"</span>
+<span class="n">dest</span> <span class="o">=</span> <span class="s">"./tmp/icon.ico"</span>
+
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretreive</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="option-3-for-both-python-2-and-3">Option 3: (for both Python 2 and 3)</h2>
+
+<h3 id="from-sixmovesurllibrequest-import-urlretrieve">from six.moves.urllib.request import urlretrieve</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">six.moves.urllib.request</span> <span class="kn">import</span> <span class="n">urlretrieve</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://google.com/favicon.ico"</span>
+<span class="n">dest</span> <span class="o">=</span> <span class="s">"./tmp/icon.ico"</span>
+
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretreive</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: <strong><em>six.moves</em></strong> module makes some modules available in Python 3 to be accessible in Python 2.<br />
+If you want to know more about making your script compatible with both Python 2 and 3, check <a href="/notes/python/targeting_python_2_3/">targeting_python_2_3</a></p>
+</blockquote>
+
+<h2 id="option-4-external-library">Option 4: (external library)</h2>
+
+<h3 id="import-requests">import requests</h3>
+<p>Since it is a third-party library, you need to install the module.<br />
+To install it using pip, use:</p>
+
+<p><code class="highlighter-rouge">pip install requests</code>  (for Python 2)<br />
+<code class="highlighter-rouge">pip3 install requests</code> (for Python 3)s</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://google.com/favicon.ico"</span>
+<span class="n">dest</span> <span class="o">=</span> <span class="s">"./tmp/icon.ico"</span>
+
+<span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>  <span class="c"># returns the response</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dest</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="conclusion">CONCLUSION:</h3>
+
+<p>Personally, I prefer to use requests module as it simple and gives us a lot of features. However, there are cases where you might not be allowed to use third-party library. In that case you can use any of the other three options depending on the environment you are targetting.</p>
+
+<p>To know how to use <em>requests</em> module to download archived files and extract them, check <a href="/notes/python/downloading_and_extracting/">Downloading and extracting archived files</a></p>
+
 
         
       </section>
@@ -175,7 +250,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-26T00:00:00+02:00">October 26, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-10-31T00:00:00+01:00">October 31, 2018</time></p>
         
       </footer>
 

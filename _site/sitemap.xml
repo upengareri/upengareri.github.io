@@ -20,7 +20,13 @@
 <loc>http://localhost:4000/notes/access_external_drive/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/notes/python/downloading_and_extracting/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/notes/python/downloading_data/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/notes/python/extracting_archived_files/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/notes/python/f_string/</loc>
