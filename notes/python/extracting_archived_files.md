@@ -33,19 +33,23 @@ UNKNOWN_FORMAT = "ERROR: Unknown file format. Can't extract."
 
 # EXTRACTION 
 def extract_file(filename, out_dir="data/"):
+	"""Extract file based on file extension
+	target_path: string, location where data will be extracted
+	filename: string, name of the file along with extension
+	"""
 	if filename == "" or filename is None:
 		raise Exception(FILENAME_ERROR)
 	if filename.endswith(ZIP_EXTENSION):
 		print("Extracting zip file...")
 		zipf = zipfile.ZipFile(filename, 'r')
-		zipf.extractall(zipf, out_dir)
+		zipf.extractall(out_dir)
 		zipf.close()
 	elif filename.endswith(TAR_EXTENSION) or \
 		 filename.endswith(TAR_GZ_EXTENSION) or \
 		 filename.endswith(TGZ_EXTENSION):
 		print("Extracting tar file")
 		tarf = tarfile.open(filename, 'r')
-		tarf.extractall(tarf, out_dir)
+		tarf.extractall(out_dir)
 		tarf.close()
 	elif filename.endswith(GZ_EXTENSION):
 		print("Extracting gz file")

@@ -27,7 +27,7 @@
 
 
 
-  <meta property="article:published_time" content="2018-11-01T00:00:00+01:00">
+  <meta property="article:published_time" content="2018-11-03T00:00:00+01:00">
 
 
 
@@ -150,7 +150,7 @@
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
     <meta itemprop="headline" content="Downloading and extracting archived files">
     
-    <meta itemprop="datePublished" content="November 01, 2018">
+    <meta itemprop="datePublished" content="November 03, 2018">
     
 
     <div class="page__inner-wrap">
@@ -164,7 +164,117 @@
 
       <section class="page__content" itemprop="text">
         
-        
+        <p>Datasets are important part of Machine Learning and quite often the datasets are provided in a zip file.
+In this article we’ll cover how to download an archived dataset from any URL and extract it using a python script.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># IMPORTING MODULES</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+<span class="kn">import</span> <span class="nn">tarfile</span>
+<span class="kn">import</span> <span class="nn">gzip</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ARCHIVE EXTENSIONS</span>
+<span class="n">ZIP_EXTENSION</span> <span class="o">=</span> <span class="s">".zip"</span>
+<span class="n">TAR_EXTENSION</span> <span class="o">=</span> <span class="s">".tar"</span>
+<span class="n">TAR_GZ_EXTENSION</span> <span class="o">=</span> <span class="s">".tar.gz"</span>
+<span class="n">TGZ_EXTENSION</span> <span class="o">=</span> <span class="s">".tgz"</span>
+<span class="n">GZ_EXTENSION</span> <span class="o">=</span> <span class="s">".gz"</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">EMPTY_URL_ERROR</span> <span class="o">=</span> <span class="s">"ERROR: URL should not be empty."</span>
+<span class="n">FILENAME_ERROR</span> <span class="o">=</span> <span class="s">"ERROR: Filename should not be empty."</span>
+<span class="n">UNKNOWN_FORMAT</span> <span class="o">=</span> <span class="s">"ERROR: Unknown file format. Can't extract."</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">download_dataset</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">target_path</span><span class="o">=</span><span class="s">"data/"</span><span class="p">,</span> <span class="n">keep_download</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">overwrite_download</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+	<span class="s">"""Downloads dataset from a url.
+	url: string, a dataset path
+	target_path: string, path where data will be downloaded
+	keep_download: boolean, keeps the original file after extraction
+	overwrite_download: boolean, stops download if dataset already exists
+	"""</span>
+	<span class="k">if</span> <span class="n">url</span> <span class="o">==</span> <span class="s">""</span> <span class="ow">or</span> <span class="n">url</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="n">EMPTY_URL_ERROR</span><span class="p">)</span>
+
+	<span class="n">filename</span> <span class="o">=</span> <span class="n">get_filename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+	<span class="n">file_location</span> <span class="o">=</span> <span class="n">get_file_location</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+	<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_location</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">overwrite_download</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"File already exists at {file_location}. Use: 'overwrite_download=True' to </span><span class="se">\
+</span><span class="s">overwrite download"</span><span class="p">)</span>
+		<span class="n">extract_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+		<span class="k">return</span>
+
+	<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Downloading file from {url} to {file_location}."</span><span class="p">)</span>
+	<span class="c"># Download</span>
+	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="s">'wb'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+		<span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">resp</span><span class="p">:</span>
+			<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">resp</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">512</span><span class="p">):</span>  <span class="c">#chunk_size in bytes</span>
+				<span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+					<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+
+	<span class="k">print</span><span class="p">(</span><span class="s">"Finished downloading."</span><span class="p">)</span>
+	<span class="k">print</span><span class="p">(</span><span class="s">"Extracting the file now ..."</span><span class="p">)</span>
+	<span class="n">extract_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="ow">not</span> <span class="n">keep_download</span><span class="p">:</span>
+		<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">file_location</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">extract_file</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+	<span class="s">"""Extract file based on file extension
+	target_path: string, location where data will be extracted
+	filename: string, name of the file along with extension
+	"""</span>
+	<span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s">""</span> <span class="ow">or</span> <span class="n">filename</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="n">FILENAME_ERROR</span><span class="p">)</span>
+
+	<span class="n">file_location</span> <span class="o">=</span> <span class="n">get_file_location</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ZIP_EXTENSION</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting zip file..."</span><span class="p">)</span>
+		<span class="n">zipf</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+		<span class="n">zipf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
+		<span class="n">zipf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+	<span class="k">elif</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TAR_EXTENSION</span><span class="p">)</span> <span class="ow">or</span> \
+		 <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TAR_GZ_EXTENSION</span><span class="p">)</span> <span class="ow">or</span> \
+		 <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TGZ_EXTENSION</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting tar file"</span><span class="p">)</span>
+		<span class="n">tarf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
+		<span class="n">tarf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">target_path</span><span class="p">)</span>
+		<span class="n">tarf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+	<span class="k">elif</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">GZ_EXTENSION</span><span class="p">):</span>
+		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting gz file"</span><span class="p">)</span>
+		<span class="n">out_file</span> <span class="o">=</span> <span class="n">file_location</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+		<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_location</span><span class="p">,</span> <span class="s">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_in</span><span class="p">:</span>
+			<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="s">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+				<span class="n">shutil</span><span class="o">.</span><span class="n">copyfileobj</span><span class="p">(</span><span class="n">f_in</span><span class="p">,</span> <span class="n">f_out</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">print</span><span class="p">(</span><span class="n">UNKNOWN_FORMAT</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">get_filename</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+	<span class="s">"""Extract filename from file url"""</span>
+	<span class="n">filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">filename</span>
+
+<span class="k">def</span> <span class="nf">get_file_location</span><span class="p">(</span><span class="n">target_path</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+	<span class="s">""" Concatenate download directory and filename"""</span>
+	<span class="k">return</span> <span class="n">target_path</span> <span class="o">+</span> <span class="n">filename</span>
+</code></pre></div></div>
+
+<h3 id="about-requests-module">About <em>requests</em> module</h3>
+<p>Request module is useful when downloading large files. I prefere to use this module when the size of the file is more than 500MB. In the above code, the important thing to discuss is <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">stream</code></span> parameter of <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'">requests.get</span> method. <br /></p>
+
+<p>If <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">stream</code></span> is set to <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">False</code></span> then the entire file gets downloaded into memory and if the file size is too large, then it can be an issue with the memory consumption.<br />
+If <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">stream</code></span> is set to <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">True</code></span>, then the download does not start immediately. Instead, only the header is downloaded and the connection remains open. This way we can either go with the download or we can cancel it (depending on header info). The file gets downloaded only when we use the <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">content</code></span> property or iterate over the content with <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">iter_content</code></span>.  <br />
+The <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">content</code></span> property puts the entire content into the memory which we should try to avoid for bigger files whereas the <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">iter_content</code></span> loads the file in chunks into the memory.</p>
 
         
       </section>
@@ -175,7 +285,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-11-01T00:00:00+01:00">November 01, 2018</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-11-03T00:00:00+01:00">November 03, 2018</time></p>
         
       </footer>
 

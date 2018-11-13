@@ -189,19 +189,23 @@ To know more about these extensions check <a href="https://upengareri.github.io/
 
 <span class="c"># EXTRACTION </span>
 <span class="k">def</span> <span class="nf">extract_file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">out_dir</span><span class="o">=</span><span class="s">"data/"</span><span class="p">):</span>
+	<span class="s">"""Extract file based on file extension
+	target_path: string, location where data will be extracted
+	filename: string, name of the file along with extension
+	"""</span>
 	<span class="k">if</span> <span class="n">filename</span> <span class="o">==</span> <span class="s">""</span> <span class="ow">or</span> <span class="n">filename</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
 		<span class="k">raise</span> <span class="nb">Exception</span><span class="p">(</span><span class="n">FILENAME_ERROR</span><span class="p">)</span>
 	<span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ZIP_EXTENSION</span><span class="p">):</span>
 		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting zip file..."</span><span class="p">)</span>
 		<span class="n">zipf</span> <span class="o">=</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
-		<span class="n">zipf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">zipf</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span>
+		<span class="n">zipf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
 		<span class="n">zipf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 	<span class="k">elif</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TAR_EXTENSION</span><span class="p">)</span> <span class="ow">or</span> \
 		 <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TAR_GZ_EXTENSION</span><span class="p">)</span> <span class="ow">or</span> \
 		 <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">TGZ_EXTENSION</span><span class="p">):</span>
 		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting tar file"</span><span class="p">)</span>
 		<span class="n">tarf</span> <span class="o">=</span> <span class="n">tarfile</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
-		<span class="n">tarf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">tarf</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span>
+		<span class="n">tarf</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
 		<span class="n">tarf</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 	<span class="k">elif</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">GZ_EXTENSION</span><span class="p">):</span>
 		<span class="k">print</span><span class="p">(</span><span class="s">"Extracting gz file"</span><span class="p">)</span>
