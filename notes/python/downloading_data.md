@@ -11,7 +11,7 @@ Here, we go through some of the ways in which we can download files in Python.
 
 Let's say we want to download an image from __http://google.com/favicon.ico__
 
-## Option 1: (for Python 2)
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 1: (for Python 2)</h2>
 
 ### import urllib2
 
@@ -28,7 +28,7 @@ with open(dest) as f:
 
 ```
 
-## Option 2: (for Python 3)
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 2: (for Python 3)</h2>
 
 ### import urllib.request
 
@@ -40,7 +40,7 @@ dest = "./tmp/icon.ico"
 urllib.request.urlretreive(url, dest)
 ```
 
-## Option 3: (for both Python 2 and 3)
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 3: (for both Python 2 and 3)</h2>
 
 ### from six.moves.urllib.request import urlretrieve
 
@@ -55,7 +55,7 @@ urllib.request.urlretreive(url, dest)
 > Note: ___six.moves___ module makes some modules available in Python 3 to be accessible in Python 2.<br/>
 If you want to know more about making your script compatible with both Python 2 and 3, check [targeting_python_2_3](targeting_python_2_3.md)
 
-## Option 4: (external library)
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">Option 4: (external library)</h2>
 
 ### import requests
 Since it is a third-party library, you need to install the module.<br/>
@@ -75,7 +75,7 @@ with open(dest) as f:
 	f.write(resp.content)
 ```
 
-### CONCLUSION:
+<h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">CONCLUSION:</h2>
 
 Personally, I prefer to use requests module as it simple and gives us a lot of features. However, there are cases where you might not be allowed to use third-party library. In that case you can use any of the other three options depending on the environment you are targetting.
 

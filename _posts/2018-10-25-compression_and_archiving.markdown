@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Difference between .tar, .gz, .tar.gz, .zip"
+title:  "Difference between .tar, .gz, .tar.gz, .tgz, .zip"
 date:   2018-10-25
 ---
 

@@ -14,7 +14,7 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/setting_up_paperspace/",
         "teaser":null},{
-        "title": "Difference between .tar, .gz, .tar.gz, .zip",
+        "title": "Difference between .tar, .gz, .tar.gz, .tgz, .zip",
         "excerpt":"We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below - 1) .tar It stands for tape archive. It simply puts multiple files together It does not reduce the size i.e no compression techniqueCommand to archive files...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/compression_and_archiving/",
