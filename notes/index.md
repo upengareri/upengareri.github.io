@@ -30,5 +30,6 @@ Here, I provide a list of materials for machine learning related work.
 |[Downloading data with Python](python/downloading_data) | [Efficient way of string formatting: f-string](python/f_string) |
 |[Extracting archived files](python/extracting_archived_files)| [Downloading and extracting archived files](python/downloading_and_extracting)|
 
-
-## Regular Expressions
+|Numpy | | |
+|-|-|-|
+|[Random numbers](python/numpy/np_random_numbers)| [  numpy.where](python/numpy/np_where) |
