@@ -32,4 +32,4 @@ Here, I provide a list of materials for machine learning related work.
 
 |Numpy | | |
 |-|-|-|
-|[Random numbers](python/numpy/np_random_numbers)| [  numpy.where](python/numpy/np_where) |
+|[Random numbers](python/numpy/np_random_numbers)| [ numpy.where](python/numpy/np_where) |

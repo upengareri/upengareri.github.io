@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Downloading and extracting archived files - Home</title>
+<!-- begin _includes/seo.html --><title>Generating random numbers in Python and Numpy - Home</title>
 <meta name="description" content="Machine Learning and more.">
 
 
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Home">
-<meta property="og:title" content="Downloading and extracting archived files">
+<meta property="og:title" content="Generating random numbers in Python and Numpy">
 <meta property="og:url" content="http://localhost:4000/notes/python/numpy/np_random_numbers/">
 
 
@@ -148,7 +148,7 @@
   
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Downloading and extracting archived files">
+    <meta itemprop="headline" content="Generating random numbers in Python and Numpy">
     
     <meta itemprop="datePublished" content="November 19, 2018">
     
@@ -156,7 +156,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#62c462">Downloading and extracting archived files</span>
+          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#62c462">Generating random numbers in Python and Numpy</span>
 </h1>
           
         </header>
@@ -164,7 +164,250 @@
 
       <section class="page__content" itemprop="text">
         
-        
+        <p>Most random number generators are not fully random. They are <span style="color: #FE9A70; font-family: 'Lucida Grande'"><code class="highlighter-rouge">pseudorandom numbers</code></span>.<br />
+These numbers are generated using <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">pseudorandom number generator (PRNG)</code></span>. <br />
+PRNG is any algorithm for generating random numbers <span style="color: #FE9A70; font-family: 'Lucida Grande'"><code class="highlighter-rouge">which are reproducible</code></span>.</p>
+
+<hr />
+
+<p>The second type of number generator is <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">truerandom number generator (TRNG)</code></span>. They generate true random numbers.</p>
+
+<hr />
+
+<p>PRNGs are done using software while TRNGs are done using hardware. In this article, we’ll only talk about PRNGs.</p>
+
+<hr />
+<h3 id="what-do-we-mean-by-not-fully-random-or-random-numbers-which-are-reproducible">What do we mean by “not fully random” or “random numbers which are reproducible”?</h3>
+
+<p>Let’s take a simple example to illustrate this.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">NotSoRandom</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+	<span class="k">def</span> <span class="nf">seed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+		<span class="s">"""handles the initial value for random number generation"""</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">seedval</span> <span class="o">=</span> <span class="n">val</span>
+
+	<span class="k">def</span> <span class="nf">random</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="s">"""generates a random value based on seed value"""</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">seedval</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seedval</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="o">%</span> <span class="mi">15</span>
+		<span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">seedval</span>
+
+<span class="n">rand_obj</span> <span class="o">=</span> <span class="n">NotSoRandom</span><span class="p">()</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="n">rand_obj</span><span class="o">.</span><span class="n">seed</span>
+<span class="n">random</span> <span class="o">=</span> <span class="n">rand_obj</span><span class="o">.</span><span class="n">random</span>
+
+<span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="k">print</span><span class="p">([</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+<span class="n">seed</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="k">print</span><span class="p">([</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># OUTPUT:</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</code></pre></div></div>
+
+<ul>
+  <li>The random numbers generated depends on the seed value</li>
+  <li>If the seed is set to the same value, the random numbers can be reproduced.</li>
+</ul>
+
+<p>Hence the random module documentation also mentions something that you don’t want to miss:</p>
+
+<blockquote>
+  <p>Warning: The pseudo-random generators of this module should not be used for security purposes.</p>
+</blockquote>
+
+<blockquote>
+  <p>For security purpose one can use cryptographically secure pseudorandom number generator (CSPRNG).</p>
+</blockquote>
+
+<p>Now that we have a rough idea of pseudorandom number generators, let’s talk about the various use cases of random module.</p>
+
+<blockquote>
+  <p>Before diving into the code, one important thing to note is that Python’s random module is mostly used for generating a single pseudorandom number or one-dimensional pseudorandom numbers containing few random items/numbers. Similarly, numpy’s random module is used for creating multi-dimensional pseudorandom numbers. The above two sentences will become more clear with the code and example.</p>
+</blockquote>
+
+<h2 id="the-random-module">The <code class="highlighter-rouge">random</code> module</h2>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">1. Float number between [0,1) - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">random()</code></span></p>
+
+<blockquote>
+  <ul>
+    <li>Includes 0 and excludes 1</li>
+  </ul>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> 
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c"># With seed</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="mf">0.052363598850944326</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="mf">0.08718667752263232</span>
+<span class="o">&gt;&gt;&gt;</span> 
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>  <span class="c"># Re-seed</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="mf">0.052363598850944326</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="mf">0.08718667752263232</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">2. Float number between range [x,y] - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">uniform()</code></span></p>
+
+<blockquote>
+  <ul>
+    <li>Includes x and y</li>
+  </ul>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="mf">14.072417636703983</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">3. Integer between range [x,y] - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">randint()</code></span></p>
+
+<blockquote>
+  <ul>
+    <li>Includes x and y<br /></li>
+    <li>With <span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">random.randrange(x,y)</code></span> one can exlude the right hand side of the interval</li>
+  </ul>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="mi">11</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">4. To pick one random element from a sequence (like a list or a tuple) - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">choice()</code></span></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"one"</span><span class="p">,</span> <span class="s">"two"</span><span class="p">,</span> <span class="s">"three"</span><span class="p">,</span> <span class="s">"four"</span><span class="p">,</span> <span class="s">"five"</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="s">'one'</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="s">'four'</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">5. To pick multiple random elements from a sequence with replacement (duplicate possible) - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">choices()</code></span></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="p">[</span><span class="s">'five'</span><span class="p">,</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">choices</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="s">'two'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">6. To pick multiple random elements from a sequence without replacement (no duplicates) - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">sample()</code></span></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="p">[</span><span class="s">'two'</span><span class="p">,</span> <span class="s">'one'</span><span class="p">,</span> <span class="s">'five'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><span style="color: #55acee;background-color: #1E242C;font-size:18px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">7. To shuffle/ randomize elements of a sequence in-place - </code></span><span style="font-weight: bold;color: #FE9A70;"><code class="highlighter-rouge">shuffle()</code></span></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">items</span>
+<span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'four'</span><span class="p">,</span> <span class="s">'five'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">items</span>
+<span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'four'</span><span class="p">,</span> <span class="s">'five'</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">items</span>
+<span class="p">[</span><span class="s">'one'</span><span class="p">,</span> <span class="s">'three'</span><span class="p">,</span> <span class="s">'two'</span><span class="p">,</span> <span class="s">'four'</span><span class="p">,</span> <span class="s">'five'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="random-sequence-of-arrays-numpyrandom">Random sequence of arrays: <code class="highlighter-rouge">numpy.random</code></h2>
+
+<p>As said earlier, most of python’s random module returns a scalar random value. To generate sequence of random values we can either use python’s list comprehension or <code class="highlighter-rouge">numpy.random</code>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c"># using list comprehension</span>
+<span class="p">[</span><span class="mf">0.8378376441951344</span><span class="p">,</span> <span class="mf">0.7687947474799836</span><span class="p">,</span> <span class="mf">0.3434621581559646</span><span class="p">,</span> <span class="mf">0.801496591292033</span><span class="p">,</span> <span class="mf">0.2068624706661114</span><span class="p">]</span>
+</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">()</span>
+<span class="mf">0.7170764416798703</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>  <span class="c"># using numpy</span>
+<span class="mf">0.5460660016017443</span>
+</code></pre></div></div>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">numpy.random</code> is most useful in generating multi-dimensional array of random numbers.</li>
+  </ul>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c"># 2 rows and 2 columns</span>
+<span class="n">array</span><span class="p">([[</span><span class="mf">0.34054351</span><span class="p">,</span> <span class="mf">0.50084858</span><span class="p">],</span>
+       <span class="p">[</span><span class="mf">0.14742627</span><span class="p">,</span> <span class="mf">0.61051125</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<p>All the methods of python’s random module are also available in numpy’s random module. The below table summarizes the different random functions of both the python and numpy modules.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Python <code class="highlighter-rouge">random</code></th>
+      <th> </th>
+      <th> </th>
+      <th>Numpy <code class="highlighter-rouge">random</code></th>
+      <th>Use case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>random()</td>
+      <td> </td>
+      <td> </td>
+      <td>rand()</td>
+      <td>random float in [0,1)</td>
+    </tr>
+    <tr>
+      <td>uniform(a,b)</td>
+      <td> </td>
+      <td> </td>
+      <td>uniform()</td>
+      <td>random float in [a,b]</td>
+    </tr>
+    <tr>
+      <td>randint(a,b)</td>
+      <td> </td>
+      <td> </td>
+      <td>random_integers()</td>
+      <td>random integer in [a,b]</td>
+    </tr>
+    <tr>
+      <td>randrange(a,b)</td>
+      <td> </td>
+      <td> </td>
+      <td>randint()</td>
+      <td>random integer in [a,b)</td>
+    </tr>
+    <tr>
+      <td>choice(seq)</td>
+      <td> </td>
+      <td> </td>
+      <td>choice())</td>
+      <td>random element from seq</td>
+    </tr>
+    <tr>
+      <td>choices(seq,k=1)</td>
+      <td> </td>
+      <td> </td>
+      <td>choice()</td>
+      <td>random k elements from seq with replacement</td>
+    </tr>
+    <tr>
+      <td>sample(seq,k=1)</td>
+      <td> </td>
+      <td> </td>
+      <td>choice with replace=False</td>
+      <td>random k elements from seq without replacement</td>
+    </tr>
+    <tr>
+      <td>shuffle(seq)</td>
+      <td> </td>
+      <td> </td>
+      <td>shuffle</td>
+      <td>shuffle seq in-place</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>Numpy is fast for high-dimensional array manipulation. For single or small sequence of random numbers, python’s <code class="highlighter-rouge">random</code> module will suffice and may even be faster than numpy’s random module.</p>
+</blockquote>
 
         
       </section>
