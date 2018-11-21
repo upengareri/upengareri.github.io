@@ -94,7 +94,7 @@ If it was a directory that you deleted<br/>
 
 ### Merge one branch into another
 > Switch to the branch you want to pull changes into<br/>
-&emsp;&emsp;`git branch master`<br/>
+&emsp;&emsp;`git checkout master`<br/>
 Pull changes from another branch<br/>
 &emsp;&emsp;`git merge feature_x`
 
