@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"We can see different kinds of file extensions while downloading the dataset.Some of the most common archiving and compression formats are discussed below - 1) .tar It stands for tape archive. It simply puts multiple files together It does not reduce the size i.e no compression techniqueCommand to archive files...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/compression_and_archiving/",
+        "teaser":null},{
+        "title": "Git contribution graph issue",
+        "excerpt":"Recently I have had this issue related to the github contribution graph. For a while, I was able to see the changes in the graph when pushing any commits to the server. But suddenly the graph stopped showing any contributions even though the files and commits were getting updated. The...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/git_contribution_graph_issue/",
         "teaser":null}]

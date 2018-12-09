@@ -1,4 +1,49 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-11-22T17:59:18+01:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Difference between .tar, .gz, .tar.gz, .tgz, .zip</title><link href="http://localhost:4000/compression_and_archiving/" rel="alternate" type="text/html" title="Difference between .tar, .gz, .tar.gz, .tgz, .zip" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T00:00:00+02:00</updated><id>http://localhost:4000/compression_and_archiving</id><content type="html" xml:base="http://localhost:4000/compression_and_archiving/">&lt;p&gt;We can see different kinds of file extensions while downloading the dataset.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-12-08T12:44:38+01:00</updated><id>http://localhost:4000/</id><title type="html">Home</title><subtitle>Machine Learning and more.</subtitle><author><name>Upendar Gareri</name></author><entry><title type="html">Git contribution graph issue</title><link href="http://localhost:4000/git_contribution_graph_issue/" rel="alternate" type="text/html" title="Git contribution graph issue" /><published>2018-12-08T00:00:00+01:00</published><updated>2018-12-08T00:00:00+01:00</updated><id>http://localhost:4000/git_contribution_graph_issue</id><content type="html" xml:base="http://localhost:4000/git_contribution_graph_issue/">&lt;p&gt;Recently I have had this issue related to the github contribution graph. For a while, I was able to see the changes in the graph when pushing any commits to the server. But suddenly the graph stopped showing any contributions even though the files and commits were getting updated.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/git_contribution_graph.png&quot; alt=&quot;github contribution graph&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem in my case was that my email somehow got misconfigured in my local machine settings.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;To check your git configuration, open your terminal and type:&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This will show you your username and email associated with the github account.
+The username here is not the same as your github account username and you can change as many times as you want to anything.
+The email part here is important for graph contribution.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;In my case email id was missing somehow and that is why the graph contribution was not updating.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: The email has to be the same one that you have provided in your github settings. 
+In order to check or add email address go to &lt;a href=&quot;https://github.com/settings/emails&quot;&gt;https://github.com/settings/emails&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;how-to-fix-the-problem&quot;&gt;How to fix the problem?&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Set your email for a single repository&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;In the terminal, go from current directory to your local repository where you want to configure&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config user.email &quot;email@example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Set your email for every repository on your machine:&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global user.email &quot;email@example.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;To confirm the settings:&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config user.email
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Upendar Gareri</name></author><summary type="html">Recently I have had this issue related to the github contribution graph. For a while, I was able to see the changes in the graph when pushing any commits to the server. But suddenly the graph stopped showing any contributions even though the files and commits were getting updated.</summary></entry><entry><title type="html">Difference between .tar, .gz, .tar.gz, .tgz, .zip</title><link href="http://localhost:4000/compression_and_archiving/" rel="alternate" type="text/html" title="Difference between .tar, .gz, .tar.gz, .tgz, .zip" /><published>2018-10-25T00:00:00+02:00</published><updated>2018-10-25T00:00:00+02:00</updated><id>http://localhost:4000/compression_and_archiving</id><content type="html" xml:base="http://localhost:4000/compression_and_archiving/">&lt;p&gt;We can see different kinds of file extensions while downloading the dataset.
 Some of the most common archiving and compression formats are discussed below -&lt;/p&gt;
 
 &lt;h3 id=&quot;1-tar&quot;&gt;1) .tar&lt;/h3&gt;
