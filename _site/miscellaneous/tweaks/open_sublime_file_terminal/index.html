@@ -1,0 +1,337 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.13.0 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Open sublime file from terminal - Home</title>
+<meta name="description" content="Machine Learning and more.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Home">
+<meta property="og:title" content="Open sublime file from terminal">
+<meta property="og:url" content="http://localhost:4000/miscellaneous/tweaks/open_sublime_file_terminal/">
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-12-13T00:00:00+01:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/miscellaneous/tweaks/open_sublime_file_terminal/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Upendar Gareri",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Home Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Home</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/notes/" >Notes</a>
+            </li><li class="masthead__menu-item">
+              <a href="/miscellaneous/" >Miscellaneous</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Open sublime file from terminal">
+    
+    <meta itemprop="datePublished" content="December 13, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#62c462">Open sublime file from terminal</span>
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>After doing a lot of stuff in the command line, it becomes boring to go to GUI. For example, let’s say I start a project, and I do something like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>Desktop
+mkdir project <span class="o">&amp;&amp;</span> <span class="nb">cd </span>project
+touch readme.md
+touch hello_world.py
+git init
+</code></pre></div></div>
+
+<p>With just a few keystrokes I created my project folder and files and initialised a git repo. Now, to use sublime text I have to right click and open with the editor or drag the folder/file to the editor. In computer world, this is called <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">context switching</code></span> which in rough sense means going from one application to another. Context switching both in computer and in the real world is costly in terms of time.</p>
+
+<p>Coming to the point, we can use some tweaks to save this time and enable opening the files from the terminal itself.</p>
+
+<h3 id="checking-if-everything-is-working-fine-before-starting">Checking if everything is working fine before starting</h3>
+
+<p>Running the below command should open the Sublime Text editor:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open -a /Applications/Sublime\ Text.app
+</code></pre></div></div>
+
+<p>Similarly, in order to open any file we can also type something like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open -a /Applications/Sublime\ Text.app hello_world.py
+</code></pre></div></div>
+
+<p>We want to make life easy and save time but the problem in the above command is that it is too long to type which doesn’t sound like saving time.</p>
+
+<p>The solution to this problem is <span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">.bash_profile</code></span>.</p>
+
+<h3 id="a-little-background-on-bash_profile">A little background on <code class="highlighter-rouge">.bash_profile</code></h3>
+<p><code class="highlighter-rouge">.bash_profile</code> is one of the hidden files in our Mac. What it does is it loads the configuration and preferences of the command line interface when we open the terminal.</p>
+
+<blockquote>
+  <p>To view hidden files in any directory, type: <br />
+<code class="highlighter-rouge">ls -a</code> <br />
+To view <code class="highlighter-rouge">.bash_profile</code>, type:<br />
+<code class="highlighter-rouge">cd ~</code> <br />
+<code class="highlighter-rouge">ls -a</code></p>
+</blockquote>
+
+<blockquote>
+  <p>Learn more about some of the most important bash commands in my article - <a href="https://github.com/upengareri/data_science/blob/master/notes/terminal/command_line_cheats.md">command line cheatsheet</a></p>
+</blockquote>
+
+<p>So, in order to make an alias or short name of the above open sublime command, we can add it to the <code class="highlighter-rouge">.bash_profile</code>.</p>
+
+<h3 id="how-to-edit-the-bash_profile-and-execute-sublime-shortcut">How to edit the .bash_profile and execute sublime shortcut</h3>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step I:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Fire up the terminal and type:</span> <br /></p>
+
+<p><code class="highlighter-rouge">cd ~</code> <br /></p>
+
+<p>This will take you to the home directory, where .bash_profile resides.</p>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step II:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Type:</span> <br /></p>
+
+<p><code class="highlighter-rouge">vim .bash_profile</code> <br /></p>
+
+<p>This will open the .bash_profile in vim editor in terminal.</p>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step III:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Add below line to the end of your .bash_profile</span> <br /></p>
+
+<p><code class="highlighter-rouge">alias sublime="open -a /Applications/Sublime\ Text.app"</code> <br /></p>
+
+<p>This will create a shortcut command <code class="highlighter-rouge">sublime</code> to open any file in sublime text editor.</p>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step IV:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Save changes by pressing <code class="highlighter-rouge">Esc</code> button and then typing:</span> <br /></p>
+
+<p><code class="highlighter-rouge">:wq</code></p>
+
+<p>This command will save the changes and exit the text editor mode.</p>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step V:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Refresh or activate the new changes by typing: </span> <br /></p>
+
+<p><code class="highlighter-rouge">source .bash_profile</code></p>
+
+<p><span style="color: yellow;font-size:14px; font-family: 'Lucida Grande'"><strong><em>Step VI:</em></strong> </span><span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"> Now, in order to open any file, go to that directory and type: </span> <br /></p>
+
+<p><code class="highlighter-rouge">sublime script.py</code></p>
+
+<p>Voila! Enjoy your hack.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-13T00:00:00+01:00">December 13, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2018 Upendar Gareri. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+  </body>
+</html>

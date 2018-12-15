@@ -9,16 +9,16 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Home</title>
+<!-- begin _includes/seo.html --><title>Open any folder window from terminal - Home</title>
 <meta name="description" content="Machine Learning and more.">
 
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Home">
-<meta property="og:title" content="Home">
-<meta property="og:url" content="http://localhost:4000/miscellaneous/">
+<meta property="og:title" content="Open any folder window from terminal">
+<meta property="og:url" content="http://localhost:4000/miscellaneous/tweaks/open_folder_terminal/">
 
 
 
@@ -26,6 +26,8 @@
 
 
 
+
+  <meta property="article:published_time" content="2018-12-12T00:00:00+01:00">
 
 
 
@@ -36,7 +38,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/miscellaneous/">
+<link rel="canonical" href="http://localhost:4000/miscellaneous/tweaks/open_folder_terminal/">
 
 
 
@@ -146,37 +148,37 @@
   
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Open any folder window from terminal">
     
-    
-    
+    <meta itemprop="datePublished" content="December 12, 2018">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          
+          <h1 id="page-title" class="page__title" itemprop="headline"><span style="color:#62c462">Open any folder window from terminal</span>
+</h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
         
-        <p>This page is about sharing interesting posts and articles on anything that interests me.</p>
+        <p>If you are a Mac user and want to open the present working folder or directory in a new Finder window from the terminal then use the below command:</p>
 
-<h2 id="math">Math</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open .
+</code></pre></div></div>
 
-<ul>
-  <li><a href="https://betterexplained.com/articles/think-with-exponents/">How to think with logarithms and exponents</a></li>
-  <li><a href="https://www.mathsisfun.com/data/standard-normal-distribution.html">Normal distribution and standard deviation</a></li>
-</ul>
+<p>Similarly, in order to open any application (e.g Chrome) within Mac, use:</p>
 
-<h2 id="tweaks">Tweaks</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open -a /Applications/Google\ Chrome.app/
+</code></pre></div></div>
 
-<p><span style="color: #FE9A70;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'"><code class="highlighter-rouge">TERMINAL</code></span></p>
-<ul>
-  <li><a href="/miscellaneous/tweaks/open_folder_terminal/"><strong><code class="highlighter-rouge">MAC OS</code></strong>: Open any directory in a new Finder window from terminal</a></li>
-  <li><a href="/miscellaneous/tweaks/open_sublime_file_terminal/"><strong><code class="highlighter-rouge">MAC OS</code></strong>: Open a file in Sublime text editor from terminal</a></li>
-</ul>
+<p><code class="highlighter-rouge">-a : specific application </code></p>
+
+<p>Let’s say you frequently use chrome from terminal. In that case you can further hack to create a short version or symbolic link of the command to type less and save time.</p>
+
+<p>An example of a similar use case is described in my article -<br /> <a href="/miscellaneous/tweaks/open_sublime_file_terminal/">how to open any file in sublime from terminal</a></p>
 
         
       </section>
@@ -186,6 +188,8 @@
         
 
 
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-12T00:00:00+01:00">December 12, 2018</time></p>
         
       </footer>
 
