@@ -119,6 +119,16 @@ _Example 3.5:_ ___Multiline___
 ```
 > You have to put 'f' in front of every line.
 
+_Example 3.5:_ ___Floating value with 2 decimal points___
+
+```python
+>>> num = 23.3
+>>> 
+>>> print(f"{x:.2f}")
+>>> 23.30
+```
+
+
 <h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">SUMMARY</h2>
 
 For Python version >=3.6, use `f-string`
