@@ -21,6 +21,8 @@ Here, I provide a list of materials for machine learning related work.
 ## Git
 * [Git cheatsheet](git_cheatsheet)
 
+## VSCode
+* [Open VSCode from terminal](vscode/code_from_terminal.md)
 
 ## Python
 
