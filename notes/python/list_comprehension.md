@@ -157,7 +157,7 @@ flattened_ = [element for row in non_flattened if len(row) > 2 for element in ro
 transposed_ = [[row[i] for row in matrix] for i in range(3)]
 ```
 `Output:`<br/>
-`[1, 2, 3, 4, 5, 6]`
+`[[1, 4, 7], [2, 5, 8], [3, 6, 9]]`
 
 > Here, the flow of execution is backwards because of square bracket within the LC.
 
