@@ -28,11 +28,11 @@ Here, I provide a list of materials for machine learning related work.
 
 |Tips | | |
 |-|-|-|
-|[Targeting Python 2 & 3](python/targeting_python_2_3)| [Joining arrays and strings](python/joining_arrays_and_strings) |
-|[Downloading data with Python](python/downloading_data) | [Efficient way of string formatting: f-string](python/f_string) |
-|[Extracting archived files](python/extracting_archived_files)| [Downloading and extracting archived files](python/downloading_and_extracting)|
-|[List comprehension](python/list_comprehension)| |
+|[<span style="font-size:1.2em;">Targeting Python 2 & 3</span>](python/targeting_python_2_3)| [<span style="font-size:1.2em;">Joining arrays and strings</span>](python/joining_arrays_and_strings) |
+|[<span style="font-size:1.2em;">Downloading data with Python</span>](python/downloading_data) | [<span style="font-size:1.2em;">Efficient way of string formatting: f-string</span>](python/f_string) |
+|[<span style="font-size:1.2em;">Extracting archived files</span>](python/extracting_archived_files)| [<span style="font-size:1.2em;">Downloading and extracting archived files</span>](python/downloading_and_extracting)|
+|[<span style="font-size:1.2em;">List comprehension</span>](python/list_comprehension)| |
 
 |Numpy | | |
 |-|-|-|
-|[Random numbers](python/numpy/np_random_numbers)| [ numpy.where](python/numpy/np_where) |
+|[<span style="font-size:1.2em;">Random numbers</span>](python/numpy/np_random_numbers)| [<span style="font-size:1.2em;">numpy.where</span>](python/numpy/np_where) |
