@@ -2,6 +2,7 @@
 layout: single
 title:  "Google Analytics for Jekyll themed github webpages"
 date:   2020-02-14
+comments: true
 ---
 
 Google analytics can be used for free to add tracking to your jekyll themed github website. In this post I am gonna show you a simple configuration using a javascript code snippet to add analytics to your website.
@@ -16,7 +17,7 @@ The reason for putting this post is I couldn't find a simple instruction on how 
 
 <h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">1. Javascript code snippet for analytics</h2>
 
-<!-- Copy the below snippet to your `analytics.html` page at the very end. -->
+Copy the below snippet to your `analytics.html` page at the very end.
 ```javascript
 <script>
   window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
@@ -31,32 +32,21 @@ The reason for putting this post is I couldn't find a simple instruction on how 
 
 <h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">2. Code snippet for applying analytics on all pages</h2>
 
-_OPTION 1:_
+### _OPTION 1:_
 
 Copy the below snippet to your `default.html` page under the `<head>` section after the `% include analytics.html` 
 
-```javascript
-{% if site.google_analytics and jekyll.environment == 'production' %}
-{% include analytics.html %}
-{% endif %}
+![](../assets/images/code_snippet.png)
 
-```
 
 My head section looks something like this after copying the code snippet
 
-```javascript
+![](../assets/images/sample_code_snippet.png)
 
-{% include head.html %}
-{% include head/custom.html %}
-{% if site.google_analytics and jekyll.environment == 'production' %}
-{% include analytics.html %}
-{% endif %}
-
-```
 
 > The `default.html` page would be in `_layouts` directory.
 
-_OPTION 2:_
+### _OPTION 2:_
 
 Ideally, the above code snippet should go in `head.html` under its `<head>` section.
 But for some, the `head.html` does not exist.
@@ -68,10 +58,10 @@ If you have it then you can copy paste there or try and create the tag and then 
 
 <h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">3. Get Tracking ID from Google Analytics Website</h2>
 
-The next step is to go to (analytics.google.com/)[https://analytics.google.com/] and create a _tracking ID_.
+The next step is to go to [analytics.google.com](https://analytics.google.com/analytics) and create a _tracking ID_.
 
 To create a tracking ID for your website you need to register your website.
-To do that create a property and fill the simple details asked.
+To do that go to admin -> create a property and fill the simple details asked.
 
 <h2 style="color: #55acee; font-size:26px; font-family: 'Lucida Grande'">4. Copy the Tracking ID</h2>
 

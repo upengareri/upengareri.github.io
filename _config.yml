@@ -103,7 +103,7 @@ author:
   name             : "Upendar Gareri"
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : "Machine Learning Enthusiast."
-  location         : "Ulm, Germany"
+  location         : "Munich, Germany"
   email            :
   links:
     - label: "Email"
@@ -283,7 +283,7 @@ defaults:
       layout: single
       author_profile: false # true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
       defaults:
