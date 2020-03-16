@@ -32,11 +32,92 @@ comments: true
     - Remove permission
     = Re-assign (set permission and remove other permissions)
 ```
+> Using `=` means we remove/wipe-out existing permission and re-assign new permissions 
 
 The above 3 points are enough for us to understand what chmod is doing. Let's dive into some examples to decrypt chmod's actions -
 
-<span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'">
-chmod u=r file1.txt</span>   // User can read only
+### EXAMPLES
 
-<span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'">
-chmod g=rw file1.txt</span>   // Group can read and write
+> _Set Permissions:_
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod u=r file1.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has read only permission</span>
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod g=rw file1.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Group has read and write</span>
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod o= file1.txt</span>  &emsp; /<span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">/ Others have no permission</span>
+
+> _Add/Remove Permissions:_
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod u+x file1.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute to user</span>
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod g-w file1.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove write from group</span>
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod o+r file1.txt</span>  &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add read to others</span>
+
+> _Multiple Assignments:_
+> Use `,`
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod u=rwx,g+rx,o= file1.txt</span>
+
+<span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has read/write/execute; Add read/execute to Group; Others None</span>
+
+_Note: No space beteween commas_
+
+> _Multiple Files:_
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod o-r *.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove read from others to all the text files</span>
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod -R o-r *.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Include files in sub-directories (-R means RECURSIVE); Remove read from others to all the text files </span>
+
+### Quiz
+
+*1)* <span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod u=rwx file1.txt</span>
+
+*2)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod g-x file1.txt</span>
+
+*3)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod u=x,g-w,o=r file1.txt</span>
+
+*4)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod a+x file1.txt</span>
+
+*5)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod +x file1.txt</span>
+
+### Answers 
+(Intentionally kept less visible)
+
+*1)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>
+
+*2)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>
+
+*3)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>
+
+*4)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>
+
+*5)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>
+
+
+|Question | | | Answer |
+|-|-|-|-|
+|chmod u=rwx file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>|
+|||||
+|chmod g-x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>|
+|||||
+|chmod u=x,g-w,o=r file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>|
+|||||
+|chmod a+x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>|
+|||||
+|chmod +x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>|
+
