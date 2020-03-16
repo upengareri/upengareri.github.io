@@ -82,21 +82,79 @@ chmod -R o-r *.txt</span> &emsp; <span style="color: yellow;background-color: #1
 
 |Question&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Answer |
 |-|-|
-|chmod u=rwx file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>|
+|chmod u=rwx `file`|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>|
 |||
-|chmod g-x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>|
+|chmod g-x `file`|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>|
 |||
-|chmod u=x,g-w,o=r file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>|
+|chmod u=x,g-w,o=r `file`|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>|
 |||
-|chmod a+x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>|
+|chmod a+x `file`|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>|
 |||
-|chmod +x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>|
+|chmod +x `file`|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>|
 
 
 > Hey, don't you think it was easy!!!
 
 ### BONUS
 
-Let's learn the *OCTAL/NUMERICAL* SHORTHAND as well, if you are not exhausted.
+**OCTAL/NUMERICAL** shorthand is more common among core users, so let's learn that as well.
+
+In `octal` notation, the first number represents `user` permission, the second number represents `group` permission and the third number represents the `others` permission.
+
+Syntax: 
+
+> `chmod ugo file`  # one octal mapped to each user
+
+Example:
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod 750 file1.txt</span>
+
+Here 7 is for user; 5 is for group; 0 is for others.
+The permission for this file are `rwx r-x ---`.
+
+7 means read, write, execute
+5 means read and execute
+0 means no permission
+
+Below table clarifies how 7 means rwx and 5 mean r-x
+
+Octal|Binary|Permission|
+-|-|-|
+0|000|`---`
+1|001|`--x`
+2|010|`-w-`
+3|011|`-wx`
+4|100|`r--`
+5|101|`r-x`
+6|110|`rw-`
+7|111|`rwx`
+
+As you might have already noticed, 0 means no permission, while 1 means r, w or x depending on its position.
+
+What does this mean -
+
+<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
+chmod 744 file1.txt</span>
+
+// 7 - User can read, write, execute
+
+// 4 - Group can read
+
+// 4 - Owner can read
+
+
+Lastly, the first notation when we check the permission of a file or directory using the command `ls -l` is for either a file or directory.
+
+`-` means file
+
+`d` means directory
+
+Example:
+
+![alt text](../assets/images/chmod.png)
+
+
+
 
 
