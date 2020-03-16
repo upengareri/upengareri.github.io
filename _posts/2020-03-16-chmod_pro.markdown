@@ -1,0 +1,42 @@
+---
+layout: single
+title:  "Become chmod pro in 5 minutes"
+date:   2020-03-16
+comments: true
+---
+
+### 1. Directory or file can have 3 types of users
+
+```
+    u = User (owner)
+    g = Group (members to which the file belongs)
+    o = Others (rest of the world)
+
+    a = All of the above
+```
+
+### 2. Directory or file can have 3 types of permissions
+
+```
+    r = Read
+    w = Write
+    x = Execute
+
+      = (blank) None, no permissions
+```
+
+### 3. Users can be assigned various permissions using 3 types of operations
+
+```
+    + Add permission (permission is added to existing permissions)
+    - Remove permission
+    = Re-assign (set permission and remove other permissions)
+```
+
+The above 3 points are enough for us to understand what chmod is doing. Let's dive into some examples to decrypt chmod's actions -
+
+<span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'">
+chmod u=r file1.txt</span>   // User can read only
+
+<span style="color: #55acee;background-color: #1E242C;font-size:14px; font-family: 'Lucida Grande'">
+chmod g=rw file1.txt</span>   // Group can read and write
