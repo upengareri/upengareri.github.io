@@ -78,46 +78,25 @@ chmod o-r *.txt</span> &emsp; <span style="color: yellow;background-color: #1E24
 <span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
 chmod -R o-r *.txt</span> &emsp; <span style="color: yellow;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Include files in sub-directories (-R means RECURSIVE); Remove read from others to all the text files </span>
 
-### Quiz
+### QUIZ
 
-*1)* <span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
-chmod u=rwx file1.txt</span>
-
-*2)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
-chmod g-x file1.txt</span>
-
-*3)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
-chmod u=x,g-w,o=r file1.txt</span>
-
-*4)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
-chmod a+x file1.txt</span>
-
-*5)*<span style="color: #55acee;background-color: #1E242C;font-size:16px; font-family: 'Lucida Grande'">
-chmod +x file1.txt</span>
-
-### Answers 
-(Intentionally kept less visible)
-
-*1)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>
-
-*2)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>
-
-*3)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>
-
-*4)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>
-
-*5)*<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>
+|Question&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Answer |
+|-|-|
+|chmod u=rwx file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>|
+|||
+|chmod g-x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>|
+|||
+|chmod u=x,g-w,o=r file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>|
+|||
+|chmod a+x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>|
+|||
+|chmod +x file|<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>|
 
 
-|Question | | | Answer |
-|-|-|-|-|
-|chmod u=rwx file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has all permissions for this file</span>|
-|||||
-|chmod g-x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Remove execute permission from group</span>|
-|||||
-|chmod u=x,g-w,o=r file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// User has execute; remove write from Group; Others have read permissions</span>|
-|||||
-|chmod a+x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// Add execute permissions to All users</span>|
-|||||
-|chmod +x file1.txt| | |<span style="color: gray;background-color: #1E242C;font-size:13px; font-family: 'Lucida Grande'">// If no user is mentioned then by default it takes a(all) i.e Add execute permissions to All users</span>|
+> Hey, don't you think it was easy!!!
+
+### BONUS
+
+Let's learn the *OCTAL/NUMERICAL* SHORTHAND as well, if you are not exhausted.
+
 
